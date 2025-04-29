@@ -21,3 +21,4 @@ po/*~
 README.html
 DISCLAIMER.html
 NEWS.html
+.Rbuildignore

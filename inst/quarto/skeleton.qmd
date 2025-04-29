@@ -1,0 +1,242 @@
+---
+format: 
+  docx:
+    toc: false
+    toc-depth: 3
+    toc-title: Contents
+    number-sections: false
+    reference-doc: "./templates/report_template.docx"
+    crossref: 
+      chapters: false     # set to 'true' if figure numbering should follow subsections
+    # Code options:
+    highlight-style: arrow # default
+execute: 
+  echo: false
+  warning: false
+  message: false
+editor: source
+bibliography: [bib/bibliography.bib, bib/packages.bib]  # Path to bibliography files
+csl: bib/the-journal-of-wildlife-management.csl   # Path to reference style file
+params: 
+  dat_in: !expr "paste0(system.file('extdata', package = 'twinning'), '/dat.csv')"
+---
+
+```{r}
+#| label: setup
+#| include: false
+#| echo: false
+#| message: false
+#| warning: false
+
+knitr::opts_chunk$set(warning = FALSE, 
+                      echo = FALSE,
+                      message = FALSE, 
+                      fig.align = "center"
+                      )
+library(tidyverse)
+library(flextable)
+
+# Set theme for ggplots
+ggplot2::theme_set(theme_bw(base_size = 12))
+```
+
+```{r}
+#| label: generate-package-refs
+#| include: false
+
+# Automatically create a bib database for R packages used above
+knitr::write_bib(
+  x = c(.packages(), 'tidyverse', 'flextable', "stringr",
+    # Add here all packages that are loaded in the above 'load-packages' chunk
+    'knitr'), 
+  file = 'bib/packages.bib')
+```
+
+
+```{r}
+#| label: import_data
+#| include: false
+
+# File path to twinning data
+dat_in <- params$dat_in
+
+# Observation data
+dat <- twinning::import_format(dat_in)
+dat <- dat |>
+  mutate(total = bull + yrlcow + cow0clf + cow1clf + cow2clf + cow3clf)
+
+# Data frames with twinning rates estimates
+dat_sum <- twinning::twinning_rates(dat)
+dat_sum_annual <- dat_sum |>
+  filter(! yr %in% c("overall", "eastern", "western")) |>
+  mutate(yr = as.numeric(yr))
+
+# Data frames for tables and figs
+tbls <- twinning::create_tbls(dat)
+figs <- twinning::create_figs(dat)
+```
+
+
+<!-- Banner -->
+| ![Photo Caption/FWS](images/banner.jpg)
+<!-- Banner -->
+
+<!-- Title -->
+::: {custom-style="Title"}
+Moose twinning rate estimates for portions of Alaska GMU 12 including Tetlin National Wildlife Refuge, `r min(year(dat$srvy_day))`-- `r max(year(dat$srvy_day))`
+:::
+<!-- Title -->
+
+<!-- Author -->
+::: {custom-style="Author"}
+| Brent E. Jamison, Wildlife Biologist, Tetlin NWR
+:::
+<!-- Author -->
+
+<!-- Cover photo -->
+::: {custom-style="CoverPhoto"}
+![Photo Caption/FWS](images/cover_photo.jpg)
+:::
+<!-- Cover photo -->
+
+<br>
+
+\newpage
+
+<!-- Refuge logo -->
+::: {custom-style="CoverPhoto"}
+| ![Photo Caption/FWS](images/nwrs_logo.png)
+:::
+<!-- Refuge logo -->
+
+<br> <br>
+
+Disclaimer: The use of trade names of commercial products in this report does not constitute endorsement or recommendation for use by the federal government.
+
+<br>
+
+How to cite this report: Jamison, B.E. `r year(Sys.time())`. Moose twinning rate estimates for portions of Alaska GMU 12 including Tetlin National Wildlife Refuge, `r min(year(dat$srvy_day))`-- `r max(year(dat$srvy_day))`. Tetlin National Wildlife Refuge, Tok, Alaska. p. X.
+
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>\
+<br>
+
+ON THE COVER\
+Image caption goes here  
+Image credit goes here
+
+\newpage
+
+## Abstract
+
+Limit to 300 words. This is a formatted template for the Alaska Refuges Report Series. Ideally, the text body, headers, margins, headers and footers are all ready, and the authors need only insert the appropriate text and figures into the template. It is recommended that authors save this template separately before editing. Formatting can easily be changed or deleted during report entry. Edit the headings and subheadings as appropriate for your manuscript. For example, protocols will have different sections than a report. Before finalizing your report for peer review in accordance with the Alaska Refuge Report Series Peer Review guidance, contact an Associate Editor for a report series number, and enter it into the cover and header.
+
+## Keywords
+
+Alaska, Alces americanus, moose, productivity, Tetlin National Wildlife Refuge
+
+######## 
+
+<br><br><br>
+
+Moose (*Alces americanus*) are among the most highly valued subsistence resources on Tetlin National Wildlife Refuge (NWR). Since the Refuge was established, biologists have at various times conducted moose browse surveys [@collins2004], studies of moose movements and survival (USFWS, unpublished data), and population surveys.
+
+Twinning rates are the most useful single index of the nutritional status of cow moose and are closely tied to habitat quality [@franzmann1985 @keech2000 @boertje2007]. We began annual surveys to estimate moose twinning rates for the Tetlin NWR and adjacent lands to complement population surveys that are conducted in cooperation with the Alaska Department of Fish and Game (ADF&G).
+
+# Methods
+
+The survey area was within Alaska Game Management Unit (GMU) 12 and encompassed 3,065 mi^2^. The area was bounded by the Tok Cutoff (AK Hwy 1) on the west, Nutzotin and Mentasta Mountain ranges on the south and southwest, the Alaska Highway to the north, and the Canadian border to the east (Figure 1). Land ownership includes Alaska State lands, Wrangell-St. Elias National Preserve, Tetlin National Wildlife Refuge, Native village of Tetlin, Tetlin Native Corporation lands, Native Village of Northway, Northway Native Association, and Doyon Limited Regional Corporation.
+
+No telemetry studies of moose were ongoing and no radio-collared cows were present within the survey area. Therefore, we conducted survey flights to search suitable habitat for uncollared cows with calves. We performed surveys from fixed-wing aircraft (Piper PA-18 Super Cub) annually between May 29 and June 3. We operated aircraft at $\le$ 500 ft above ground level and at 65-85 mph ground speed, and continued survey flights until we encountered $\ge$ 30 cows with one or more calves. The pilot and observer both searched for moose.
+
+We categorized moose as a bull, yearling cow, cow with no calf, cow with one calf, cow with two calves, or cow with three calves. We recorded the location of each cow moose observation with a handheld GPS unit to avoid double-counting moose during flights on subsequent days.
+
+We calculated the twinning rate ($T$) as
+
+$$
+T = \frac{M_t}{M_c + M_t}
+$$
+
+where M~c~ was the number of cows observed with one calf and M~t~ was the number of cows observed with twins. We calculated standard errors (SE) of the estimate and binomial 90% confidence intervals following @cochran1977 and @boertje2007. The multiyear twinning rate was calculated by pooling observations across years.
+
+We calculated twinning rates separately for the eastern and western portions of the survey area (east and west of the Nabesna River). We did not make statistical comparisons between the eastern and western portions of the survey area due to small sample sizes and unequal search effort.
+
+# Results
+
+We conducted `r length(unique(dat$srvy_day))` survey flights with `r length(unique(dat$pilot))` individual pilots and `r length(unique(dat$observer))` unique observers over `r  length(unique(year(dat$srvy_day)))` years. Over the entire survey area, we observed `r sum(dat$total)` adult and yearling moose (@tbl-Table1). Of these, `r sum(dat$cow1clf)` were cows with one calf and `r sum(dat$cow2clf)` were cows with twins. The estimated twinning rates ranged from `r round(min(dat_sum_annual$t), 2)` (SE = `r dat_sum_annual |> filter(t == min(t)) |> pull(se) |> round(3)`) to `r round(max(dat_sum_annual$t), 2)` (SE = `r dat_sum_annual |> filter(t == max(t)) |> pull(se) |> round(3)`) across years (@fig-Figure2). The estimated twinning rate was \< 0.20 in `r dat_sum_annual |> filter(t < 0.2) |> nrow()` of the `r nrow(dat_sum_annual)` survey years, and the multiyear twinning rate was `r dat_sum |> filter(yr == "overall") |> pull(t) |> round(2)` (SE = `r dat_sum |> filter(yr == "overall") |> pull(se) |> round(3)`; @tbl-Table2).
+
+We observed `r dat |> filter(nabevw == "East") |> summarize(t = sum(total, na.rm=total)) |> pull()` adult and yearling moose east of the Nabesna River and `r dat |> filter(nabevw == "West") |> summarize(t = sum(total, na.rm=total)) |> pull()` west of the river over `r nrow(dat_sum_annual)` survey years. Of those in the eastern portion, `r dat |> filter(nabevw == "East") |> summarize(cows_calves = sum(cow1clf+cow2clf+cow3clf)) |> pull()` were cows with calves whereas `r dat |> filter(nabevw == "West") |> summarize(cows_calves = sum(cow1clf+cow2clf+cow3clf)) |> pull()` cows with calves were west of the river. The multiyear twinning rate estimates for the eastern and western portions were `r dat_sum |> filter(yr == "eastern") |> pull(t) |> round(2)` (SE = `r dat_sum |> filter(yr == "eastern") |> pull(se) |> round(3)`) and `r dat_sum |> filter(yr == "western") |> pull(t) |> round(2)` (SE = `r dat_sum |> filter(yr == "western") |> pull(se) |> round(3)`), respectively (@tbl-Table2, @fig-Figure3).
+
+```{r}
+#| label: tbl-Table1
+#| tbl-cap: "Moose observed during spring twinning surveys for a portion of Alaska GMU 12 including the Tetlin National Wildlife Refuge, Alaska, 2021--2024."
+
+tbls$tbl1
+```
+
+```{r}
+#| label: fig-Figure2
+#| fig-cap: "Twinning rates and 90% CIs for a portion of GMU 12 including the Tetlin National Wildlife Refuge 2021--2024 estimated from aerial surveys. Labels are the number of cows with calves observed during surveys."
+
+figs$fig2
+```
+
+```{r}
+#| label: tbl-Table2
+#| tbl-cap: "Moose twinning rates for a portion of Alaska GMU 12 including the Tetlin National Wildlife Refuge, 2021--2024. Estimates for the Eastern and Western portions of the survey area are for those portions of the overall survey area east and west of the Nabesna River, respectively."
+
+tbls$tbl2
+```
+
+```{r}
+#| label: fig-Figure3
+#| fig-cap: "Multi-year twinning rates and 90% CI for areas east and west of the Nabesna River within a portion of GMU 12 including the Tetlin National Wildlife Refuge, Alaska, 2021--2024. "
+
+figs$fig3
+```
+
+# Discussion
+
+The multiyear twinning rate estimate for our survey area was lower than that for most populations in the state. @boertje2007 summarized twinning rate data for 15 Alaska moose populations and found that twinning rates varied from 0.07 to 0.67 among populations. The twinning rate for the southern portion of GMU 20E, the nearest population for which we have recent twinning data, was roughly 0.35 in 2024 (Aidan Hunter, ADF&G, personal communication).
+
+Both our estimate and that for GMU 20E appeared markedly lower in 2023 than the preceding two survey years [@wells2023]. Above-average snowfall in the winter of 2021-2022 and again in 2022-2023 could have resulted in reduced fitness of individuals in these populations [@coady1977]. In 2024, productivity appeared greater than the previous year in both GMUs, returning to 2021-2022 levels in our survey area but not fully rebounding to previous rates observed in GMU 20E [@wells2023].
+
+The eastern and western portions of the twinning survey area correspond to known differences in moose density in the two population survey areas (Northwestern Unit 12 Survey Area vs. Southeastern Unit 12 Survey Area) that overlap our twinning survey area [@wells2022]. Moose numbers in the eastern portion that includes Tetlin NWR are characteristic of a low-density population with densities of 0.28 - 0.62 moose/mi2 between 2000 and 2022 [@gasaway1992 @wells2022 @carmello2023]. The density of moose is generally greater in the western portion of the survey area with densities averaging just over 1.0 moose/mi2 over the same period [@wells2022]. Our results suggest that the twinning rate for the moderate-density population in the western portion of the survey area may be lower than that for the low-density population in the eastern portion. The disproportionate number of observations in the western portion are largely driving the multiyear twinning rate for the overall survey area.
+
+Twinning rates below 0.10 are considered indicators of nutritional stress and, along with other indices, may show that a given population has reached or exceeded carrying capacity [@boertje2007]. Continued monitoring of the twinning rate in the western portion of the survey area, where twinning rates appear lower, is important to evaluate the long-term trend. Both the low- and moderate-density populations that occur within our survey area have remained relatively stable for the past two decades so we have not documented any association between the relatively low twinning rate and population changes. It is possible that the low twinning rates are a recent phenomenon and effects could become apparent future years; especially west of the Nabesna River.
+
+Ideally, we could increase sample sizes to observations of 40 cows with calves (protocols employed by ADF&G) both east and west of the Nabesna River to better refine our estimates. However, locating even modest numbers of cows with calves in the eastern portion of our survey area often requires substantial flight time and survey cost. Mapping the distribution of the limited number of cows observed with twins suggested a potential gradient in twinning rate that increases from west to east. As we build a larger data set, we may be better able to evaluate the spatial distribution of the production of twins across the study area rather than using the simplified east versus west comparison.
+
+# Acknowledgements
+
+Include your appreciation of logistical support, funding sources, field technicians, managers, and others who contributed to the work.
+
+# Data availability
+
+The data presented in this report are available [here](https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850).
+
+\newpage
+
+# References
+
+::: {#refs}
+:::
+
+<!-- All references will be added here automatically. -->

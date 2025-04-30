@@ -1,4 +1,9 @@
 url: https://miniature-guacamole-5jkvloy.pages.github.io/
+home:
+    title: An R package for reporting on moose twinning rates
 template:
   bootstrap: 5
-
+  light-switch: true
+  opengraph:
+      image:
+          src: man/figures/logo.png

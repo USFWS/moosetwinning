@@ -23,3 +23,5 @@ DISCLAIMER.html
 NEWS.html
 .Rbuildignore
 docs
+inst/doc
+**/.quarto/

@@ -5,7 +5,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-# twinning
+# twinning <a href="https://github.com/USFWS/twinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="twinning github repository"/></a>
 
 ## Overview
 
@@ -29,7 +29,7 @@ To use `twinning` and generate reports, you’ll need:
 3.  A version of [RStudio](https://posit.co/download/rstudio-desktop/)
     that includes [Quarto](https://quarto.org/)
 
-To install and load the `twinning` R package:
+To install `twinning`:
 
 ``` r
 if (!require("devtools")) install.packages("devtools")  
@@ -43,8 +43,12 @@ library(twinning)
 To generate a moose twinning report:
 
 ``` r
+library(twinning)
 create_report(dat)
 ```
+
+For more information, check out the package [GitHub
+page](https://miniature-guacamole-5jkvloy.pages.github.io/).
 
 ## Getting help
 
@@ -55,8 +59,8 @@ with this repository.
 
 Contact the [project maintainer](emailto:mccrea_cobb@fws.gov) for
 information about contributing to this repository template. Submit a
-[GitHub Issue](https://github.com/USFWS/r7-repo-template/issues) to
-report a bug or request a feature or enhancement.
+[GitHub Issue](https://github.com/USFWS/twinning/issues) to report a bug
+or request a feature or enhancement.
 
 ------------------------------------------------------------------------
 

@@ -7,3 +7,4 @@ template:
   opengraph:
       image:
           src: man/figures/logo.png
+          alt: The twinning package logo showing a cow moose and two calves

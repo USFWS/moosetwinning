@@ -1,5 +1,6 @@
 ---
 title: "Getting started"
+description: "A brief overview of how to use the twinning R package"
 vignette: >
   %\VignetteIndexEntry{Getting started}
   %\VignetteEngine{quarto::html}
@@ -20,7 +21,7 @@ library(twinning)
 
 ## What is `twinning`?
 
-The `twinning` package includes functions for importing moose twinning data and producing twinning rate estimates, plot and summary tables, and a MS Word report. The package was originally developed for moose twinning surveys at [Tetlin National Wildlife Refuge](https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850), but the functions are flexible and could be adapted for moose twinning surveys elsewhere. 
+The `twinning` package includes functions for importing moose twinning data and producing twinning rate estimates, plots and summary tables, and a MS Word report that follows the USFWS Refuge graphic standard. The package was originally developed for moose twinning surveys at [Tetlin National Wildlife Refuge](https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850), but the functions are flexible and could be adapted for moose twinning surveys elsewhere. 
 
 ## What's required?
 

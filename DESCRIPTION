@@ -22,4 +22,6 @@ RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
 URL: https://miniature-guacamole-5jkvloy.pages.github.io/
-VignetteBuilder: quarto
+VignetteBuilder: quarto, knitr
+Suggests: 
+    rmarkdown

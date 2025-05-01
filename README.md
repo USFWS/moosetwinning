@@ -48,7 +48,7 @@ create_report(dat)
 ```
 
 For more information, check out the package [GitHub
-page](https://miniature-guacamole-5jkvloy.pages.github.io/).
+page](usfws.github.io/twinning/).
 
 ## Getting help
 

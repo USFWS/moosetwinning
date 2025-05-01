@@ -8,14 +8,14 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE, message=FALSE}
+```{r setup, include = FALSE, message=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
 
-```{r setup, echo=FALSE, message=FALSE}
+```{r packages, echo=FALSE, message=FALSE}
 library(knitr)
 library(twinning)
 library(dplyr)
@@ -24,9 +24,11 @@ library(lubridate)
 library(ggplot2)
 ```
 
+
 ## What is `twinning`?
 
 The `twinning` package includes functions for importing moose twinning data and producing twinning rate estimates, plots and summary tables, and a MS Word report that follows the USFWS Refuge graphic standard. The package was originally developed for moose twinning surveys at [Tetlin National Wildlife Refuge](https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850), but the functions are flexible and could be adapted for moose twinning surveys elsewhere. 
+
 
 ## What's required?
 
@@ -48,9 +50,11 @@ devtools::install_github("USFWS/twinning",
 library(twinning)
 ```
 
+
 ## Help!
 
 To find a help file for any function in `twinning`, type `?` and the name of the function. For example, to get help on how to use the `import_format()` function, type `?import_format`. 
+
 ## How do I use it?  
 There are two general approaches to using `twinning` and selecting which approach to take depends on your needs. The first approach ("*step-wise*"), consists of using individual functions to work through the steps of importing and formatting input data, performing an analysis, and creating tables and plots. This approach would be favored if you're interested in examining the details of the analysis, would like to perform additional analyses not included in the package, or if you just want tables and figures. The second approach ("*all in one*") performs all the above steps and compiles the results into a PDF report with `run_report()` function. This approach would be favored for annual reporting of results. Below are more details on the two approaches.
 

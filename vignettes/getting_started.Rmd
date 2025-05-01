@@ -56,12 +56,14 @@ library(twinning)
 To find a help file for any function in `twinning`, type `?` and the name of the function. For example, to get help on how to use the `import_format()` function, type `?import_format`. 
 
 ## How do I use it?  
+
 There are two general approaches to using `twinning` and selecting which approach to take depends on your needs. The first approach ("*step-wise*"), consists of using individual functions to work through the steps of importing and formatting input data, performing an analysis, and creating tables and plots. This approach would be favored if you're interested in examining the details of the analysis, would like to perform additional analyses not included in the package, or if you just want tables and figures. The second approach ("*all in one*") performs all the above steps and compiles the results into a PDF report with `run_report()` function. This approach would be favored for annual reporting of results. Below are more details on the two approaches.
 
 
 ### Option 1: Creating figures and tables
 
 #### Step 1: Import and format data using `import_format()`
+
 The first step to using any functions in `twinning` is to import and format data. This is done using the `import_format()` function, which takes in a CSV of data and returns a formatted R data frame. The function requires a file directory path to a CSV containing properly formatted data. The input CSV should following the standard described in [metadata](https://iris.fws.gov/APPS/ServCat/Reference/Profile/179584).
 
 To use example data that follow the required standard:
@@ -73,7 +75,7 @@ head(dat)
 ```
 
 
-#### Analysis
+#### Step 2: Analysis
 
 To estimate twinning rates using data have been imported and formatted using the `import_format()` function:
 
@@ -81,6 +83,9 @@ To estimate twinning rates using data have been imported and formatted using the
 dat_sum <- twinning_rates(dat)
 dat_sum
 ```
+
+
+#### Step 3: Create summary tables and figures
 
 You can create formatted `flextable` tables and figures for a report:
 
@@ -112,6 +117,7 @@ figs$fig3
 
 
 ### Option 2: Create a report
+
 This is a function developed to generate a Quarto report that summarizes annual moose twinning results. It relies on many of the above functions for importing, formatting, analyzing, and generating tables and figures. To run the function, simply run:
 ```{r, eval = FALSE}
 create_report(dat_in = dat)

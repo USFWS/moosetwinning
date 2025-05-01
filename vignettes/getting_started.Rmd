@@ -46,7 +46,6 @@ devtools::install_github("USFWS/twinning",
                          ref = "main", 
                          build_vignettes = TRUE)  
 library(twinning)
-library(dplyr)
 ```
 
 ## Help!

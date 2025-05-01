@@ -16,8 +16,6 @@
 #' }
 create_figs <- function(dat) {
 
-  library(stringr)
-
   # Figure 2
   fig2 <- twinning_rates(dat) |>
     filter(!yr %in% c("overall", "eastern", "western")) |>  # remove multiyear data

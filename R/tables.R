@@ -15,7 +15,6 @@
 #' tbls <- create_tbls(dat)
 #' }
 create_tbls <- function(dat) {
-  library(flextable)
 
   ## Table 1
   t1 <- dat |>

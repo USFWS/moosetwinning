@@ -21,10 +21,6 @@
 import_format <- function(dat_in,
                           boms = FALSE,
                           replace_nas = FALSE) {
-
-  ## Required packages
-  library(tidyverse)
-
   ## Import the data
   dat <- read.csv(file = dat_in)
 

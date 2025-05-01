@@ -51,10 +51,6 @@ library(twinning)
 ## Help!
 
 To find a help file for any function in `twinning`, type `?` and the name of the function. For example, to get help on how to use the `import_format()` function, type `?import_format`. 
-
-
-## What's inside?
-
 ## How do I use it?  
 There are two general approaches to using `twinning` and selecting which approach to take depends on your needs. The first approach ("*step-wise*"), consists of using individual functions to work through the steps of importing and formatting input data, performing an analysis, and creating tables and plots. This approach would be favored if you're interested in examining the details of the analysis, would like to perform additional analyses not included in the package, or if you just want tables and figures. The second approach ("*all in one*") performs all the above steps and compiles the results into a PDF report with `run_report()` function. This approach would be favored for annual reporting of results. Below are more details on the two approaches.
 

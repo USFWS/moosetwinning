@@ -1,4 +1,4 @@
-url: https://usfws.github.io/twinning/
+url: https://usfws.github.io/moosetwinning/
 home:
     title: An R package for reporting on moose twinning rates
 template:
@@ -7,4 +7,4 @@ template:
   opengraph:
       image:
           src: man/figures/logo.png
-          alt: The twinning package logo showing a cow moose and two calves
+          alt: The moosetwinning package logo showing a cow moose and two calves

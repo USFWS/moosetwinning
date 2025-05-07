@@ -25,11 +25,11 @@ get_report_template <- function(dirname = "quarto") {
   # Get all file names in the template folder
   list_of_files <- list.files(
     system.file(file.path("quarto"),
-                package = "twinning"))
+                package = "moosetwinning"))
 
   # Copy all files and subfolders in the skeleton folder into a new folder
   for (i in seq_along(list_of_files)) {
-    file.copy(system.file(file.path("quarto", list_of_files[i]), package = "twinning"),
+    file.copy(system.file(file.path("quarto", list_of_files[i]), package = "moosetwinning"),
               file.path(tmp_dir),
               recursive = TRUE)
   }
@@ -50,9 +50,9 @@ get_report_template <- function(dirname = "quarto") {
 #'
 #' @examples
 #' \dontrun{
-#' create_report(dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"))
+#' create_report(dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"))
 #' }
-create_report <- function(dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"),
+create_report <- function(dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"),
                           dirname = "quarto"
                           ) {
 

@@ -1,7 +1,7 @@
 
 #' Create figures for moose twinning survey report
 #'
-#' @param dat a data frame containing moose twinning data, returned by [twinning::import_format()]
+#' @param dat a data frame containing moose twinning data, returned by [moosetwinning::import_format()]
 #'
 #' @return a list of ggplot objects summarizing moose twinning rates by year and across survey areas
 #'

@@ -1,7 +1,7 @@
 
-#' Create tables for moose twinning survey report
+#' Create tables for moose twinning survey reports
 #'
-#' @param dat a data frame containing moose twinning data, returned by [twinning::import_format()]
+#' @param dat data frame containing moose twinning data, returned by [moosetwinning::import_format()]
 #'
 #' @return a list of flextable objects
 #'

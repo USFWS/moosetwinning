@@ -6,7 +6,7 @@ data-fig-alt="Lifecycle is experimental"><img
 src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"
 alt="Lifecycle: experimental" /></a> <!-- badges: end -->
 
-# twinning <a href="https://github.com/USFWS/twinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="twinning github repository"/></a>
+# twinning <a href="https://github.com/USFWS/moosetwinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="moosetwinning github repository"/></a>
 
 ## Overview
 
@@ -21,7 +21,7 @@ template](https://github.com/USFWS/akrreport).
 
 ## Installation
 
-To use `twinning` and generate reports, you’ll need:
+To use `moosetwinning` and generate reports, you’ll need:
 
 1.  **R version \>4.0** Available through FWS Apps-to-Go
 
@@ -30,25 +30,21 @@ To use `twinning` and generate reports, you’ll need:
 3.  A version of [RStudio](https://posit.co/download/rstudio-desktop/)
     that includes [Quarto](https://quarto.org/)
 
-To install `twinning`:
+To install `moosetwinning`:
 
 ``` r
 if (!require("pak")) install.packages("pak")  
-pak::pak("USFWS/twinning")  
-library(twinning)
+pak::pak("USFWS/moosetwinning")  
+library(moosetwinning)
 ```
 
 ## Usage
 
-Refer to the [Getting
-Started](https://usfws.github.io/twinning/articles/getting_started.html)
-article for details on how to use the `twinning` package.
-
-To generate an example moose twinning report using data supplied with
-the package:
+To generate a example moose twinning report using data supplied with the
+package:
 
 ``` r
-library(twinning)
+library(moosetwinning)
 create_report()
 ```
 
@@ -59,16 +55,16 @@ CSV containing moose twinning data. For example:
 create_report("./data/dat.csv")
 ```
 
-Data in the CSV should be formatted to the required standard. For
+Data in the CSV should be formatted to the required standard. See
 example:
 
 ``` r
 data("moose_twinning")
-?twinning::moose_twinning
+View(moose_twinning)
 ```
 
 For more information, check out the package [GitHub
-page](usfws.github.io/twinning/).
+page](usfws.github.io/moosetwinning/).
 
 ## Getting help
 
@@ -79,8 +75,8 @@ with this repository.
 
 Contact the [project maintainer](emailto:mccrea_cobb@fws.gov) for
 information about contributing to this repository template. Submit a
-[GitHub Issue](https://github.com/USFWS/twinning/issues) to report a bug
-or request a feature or enhancement.
+[GitHub Issue](https://github.com/USFWS/moosetwinning/issues) to report
+a bug or request a feature or enhancement.
 
 ------------------------------------------------------------------------
 

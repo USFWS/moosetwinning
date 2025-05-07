@@ -1,7 +1,9 @@
 
 #' Calculate moose twinning rates
 #'
-#' @param dat a data frame containing moose twinning data, returned by [twinning::import_format()]
+#' @description Creates a data frame containing the number of moose groups (n), twinning rates (t), standard errors (se) and 90% CIs (ci_l and ci_u) for each survey year, overall, and overall at each sub-unit.
+#'
+#' @param dat a data frame containing moose twinning data, returned by [moosetwinning::import_format()]
 #'
 #' @return a data frame containing annual and multiyear twinning rates
 #'

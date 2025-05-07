@@ -5,7 +5,7 @@
 \title{Render a moose twinning report using Quarto}
 \usage{
 create_report(
-  dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"),
+  dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"),
   dirname = "quarto"
 )
 }
@@ -17,6 +17,6 @@ Render a moose twinning report using Quarto
 }
 \examples{
 \dontrun{
-create_report(dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"))
+create_report(dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"))
 }
 }

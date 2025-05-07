@@ -2,18 +2,18 @@
 % Please edit documentation in R/tables.R
 \name{create_tbls}
 \alias{create_tbls}
-\title{Create tables for moose twinning survey report}
+\title{Create tables for moose twinning survey reports}
 \usage{
 create_tbls(dat)
 }
 \arguments{
-\item{dat}{a data frame containing moose twinning data, returned by \code{\link[=import_format]{import_format()}}}
+\item{dat}{data frame containing moose twinning data, returned by \code{\link[=import_format]{import_format()}}}
 }
 \value{
 a list of flextable objects
 }
 \description{
-Create tables for moose twinning survey report
+Create tables for moose twinning survey reports
 }
 \examples{
 \dontrun{

@@ -1,5 +1,7 @@
 
-#' Format Tetlin moose twinning survey for ServCat
+#' Format Tetlin moose twinning survey for analysis or data preservation
+#'
+#' @description Takes a CSV of raw data moose twinning data, reformats and types the data, and (optionally) adds Biological Minimum Specification fields
 #'
 #' @param dat_in a file path to a csv containing moose survey data
 #' @param boms whether to add required BOMS event observation identifiers https://iris.fws.gov/APPS/ServCat/Reference/Profile/153885

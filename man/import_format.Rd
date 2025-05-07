@@ -2,7 +2,7 @@
 % Please edit documentation in R/import_format.R
 \name{import_format}
 \alias{import_format}
-\title{Format Tetlin moose twinning survey for ServCat}
+\title{Format Tetlin moose twinning survey for analysis or data preservation}
 \usage{
 import_format(dat_in, boms = FALSE, replace_nas = FALSE)
 }
@@ -15,7 +15,7 @@ import_format(dat_in, boms = FALSE, replace_nas = FALSE)
 a data frame
 }
 \description{
-Format Tetlin moose twinning survey for ServCat
+Takes a CSV of raw data moose twinning data, reformats and types the data, and (optionally) adds Biological Minimum Specification fields
 }
 \examples{
 \dontrun{

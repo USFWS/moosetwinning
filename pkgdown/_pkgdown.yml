@@ -1,6 +1,11 @@
 url: https://usfws.github.io/moosetwinning/
 home:
-    title: An R package for reporting on moose twinning rates
+  title: An R package for moose twinning surveys
+  links:
+  - text: Browse source code
+    href: https://github.com/USFWS/moosetwinning
+  - text: Report a bug
+    href: https://github.com/USFWS/moosetwinning/issues/new
 template:
   bootstrap: 5
   light-switch: true

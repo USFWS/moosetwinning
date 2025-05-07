@@ -1,9 +1,9 @@
 ---
-title: "Getting started"
+title: "Introduction to moosetwinning"
 description: "A brief overview of how to use the moosetwinning R package"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Getting started}
+  %\VignetteIndexEntry{Introduction to moosetwinning}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -25,9 +25,7 @@ library(ggplot2)
 ```
 
 
-## What is `moosetwinning`?
-
-The `moosetwinning` package includes functions for importing moose twinning data and producing twinning rate estimates, plots and summary tables, and a MS Word report that follows the USFWS Refuge graphic standard. The package was originally developed for moose twinning surveys at [Tetlin National Wildlife Refuge](https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850), but the functions are flexible and could be adapted for moose twinning surveys elsewhere. 
+`moosetwinning` is an R package for producing moose twinning rate estimates, summary plots and tables, and a MS Word report that follows the USFWS Refuge graphic standard. The package was originally developed for moose twinning surveys at [Tetlin National Wildlife Refuge](https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850), but the functions are flexible and could be adapted for moose twinning surveys elsewhere. 
 
 
 ## What's required?

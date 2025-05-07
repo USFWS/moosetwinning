@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Getting started • twinning</title>
+<title>Getting started • moosetwinning</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,10 +16,10 @@
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Getting started">
-<meta name="description" content="A brief overview of how to use the twinning R package">
-<meta property="og:description" content="A brief overview of how to use the twinning R package">
-<meta property="og:image" content="https://usfws.github.io/twinning/reference/figures/logo.png">
-<meta property="og:image:alt" content="The twinning package logo showing a cow moose and two calves">
+<meta name="description" content="A brief overview of how to use the moosetwinning R package">
+<meta property="og:description" content="A brief overview of how to use the moosetwinning R package">
+<meta property="og:image" content="https://usfws.github.io/moosetwinning/reference/figures/logo.png">
+<meta property="og:image:alt" content="The moosetwinning package logo showing a cow moose and two calves">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -27,7 +27,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="../index.html">twinning</a>
+    <a class="navbar-brand me-2" href="../index.html">moosetwinning</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
@@ -81,12 +81,12 @@
     
     
 <div class="section level2">
-<h2 id="what-is-twinning">What is <code>twinning</code>?<a class="anchor" aria-label="anchor" href="#what-is-twinning"></a>
+<h2 id="what-is-moosetwinning">What is <code>moosetwinning</code>?<a class="anchor" aria-label="anchor" href="#what-is-moosetwinning"></a>
 </h2>
-<p>The <code>twinning</code> package includes functions for importing
-moose twinning data and producing twinning rate estimates, plots and
-summary tables, and a MS Word report that follows the USFWS Refuge
-graphic standard. The package was originally developed for moose
+<p>The <code>moosetwinning</code> package includes functions for
+importing moose twinning data and producing twinning rate estimates,
+plots and summary tables, and a MS Word report that follows the USFWS
+Refuge graphic standard. The package was originally developed for moose
 twinning surveys at <a href="https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850" class="external-link">Tetlin
 National Wildlife Refuge</a>, but the functions are flexible and could
 be adapted for moose twinning surveys elsewhere.</p>
@@ -94,7 +94,8 @@ be adapted for moose twinning surveys elsewhere.</p>
 <div class="section level2">
 <h2 id="whats-required">What’s required?<a class="anchor" aria-label="anchor" href="#whats-required"></a>
 </h2>
-<p>To use <code>twinning</code> and generate reports, you’ll need:</p>
+<p>To use <code>moosetwinning</code> and generate reports, you’ll
+need:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>R version &gt;4.0</strong> Available through FWS
 Apps-to-Go</p></li>
@@ -103,25 +104,27 @@ Apps-to-Go</p></li>
 <li><p>A version of <a href="https://posit.co/download/rstudio-desktop/" class="external-link">RStudio</a> that
 includes <a href="https://quarto.org/" class="external-link">Quarto</a></p></li>
 </ol>
-<p>To install <code>twinning</code>:</p>
+<p>To install <code>moosetwinning</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/" class="external-link">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span>  </span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"USFWS/twinning"</span><span class="op">)</span>  </span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usfws.github.io/twinning/">twinning</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"USFWS/moosetwinning"</span><span class="op">)</span>  </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usfws.github.io/moosetwinning/">moosetwinning</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="help">Help!<a class="anchor" aria-label="anchor" href="#help"></a>
 </h2>
-<p>To find a help file for any function in <code>twinning</code>, type
-<code>?</code> and the name of the function. For example, to get help on
-how to use the <code><a href="../reference/import_format.html">import_format()</a></code> function, type
-<code><a href="../reference/import_format.html">?import_format</a></code>.</p>
+<p>To find a help file for any function in <code>moosetwinning</code>,
+type <code>?</code> and the name of the function. For example, to get
+help on how to use the <code><a href="../reference/import_format.html">import_format()</a></code> function, type
+<code><a href="../reference/import_format.html">?import_format</a></code>. To learn about each function in the
+<code>moosetwinning</code> package, visit the <a href="https://usfws.github.io/moosetwinning/reference/index.html">Reference</a>
+page and select a function (e.g., <a href="https://usfws.github.io/moosetwinning/reference/import_format.html"><code>import_format</code></a>)</p>
 </div>
 <div class="section level2">
 <h2 id="how-do-i-use-it">How do I use it?<a class="anchor" aria-label="anchor" href="#how-do-i-use-it"></a>
 </h2>
-<p>There are two general approaches to using <code>twinning</code> and
-selecting which approach to take depends on your needs. The first
+<p>There are two general approaches to using <code>moosetwinning</code>
+and selecting which approach to take depends on your needs. The first
 approach (“<em>step-wise</em>”), consists of using individual functions
 to work through the steps of importing and formatting input data,
 performing an analysis, and creating tables and plots. This approach
@@ -139,8 +142,8 @@ are more details on the two approaches.</p>
 <h4 id="step-1-import-and-format-data-using-import_format">Step 1: Import and format data using
 <code>import_format()</code><a class="anchor" aria-label="anchor" href="#step-1-import-and-format-data-using-import_format"></a>
 </h4>
-<p>The first step to using any functions in <code>twinning</code> is to
-import and format data. This is done using the
+<p>The first step to using any functions in <code>moosetwinning</code>
+is to import and format data. This is done using the
 <code><a href="../reference/import_format.html">import_format()</a></code> function, which takes in a CSV of data and
 returns a formatted R data frame. The function requires a file directory
 path to a CSV containing properly formatted data. The input CSV should
@@ -148,7 +151,7 @@ following the standard described in <a href="https://iris.fws.gov/APPS/ServCat/R
 <p>To use example data that follow the required standard:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/import_format.html">import_format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"dat.csv"</span>, </span>
-<span>                                 package <span class="op">=</span> <span class="st">"twinning"</span><span class="op">)</span><span class="op">)</span></span>
+<span>                                 package <span class="op">=</span> <span class="st">"moosetwinning"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
 <span><span class="co">#&gt;     srvy_day leafout group latitude longitude bull yrlcow cow0clf cow1clf</span></span>
 <span><span class="co">#&gt; 1 2021-05-29      60     1 63.23780 -142.8996    0      0       0       1</span></span>
@@ -194,139 +197,139 @@ for a report:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tbls</span><span class="op">$</span><span class="va">tbl1</span></span></code></pre></div>
 <div class="tabwid">
-<style>.cl-1c1e77b6{}.cl-1c177272{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1c177290{font-family:'DejaVu Sans';font-size:6.6pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;position: relative;bottom:3.3pt;}.cl-1c1a5eba{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1c1a5ec4{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1c1a5ece{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1c1a7d8c{width:0.75in;background-color:transparent;vertical-align: bottom;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c1a7d96{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c1a7d97{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c1a7da0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="table cl-1c1e77b6">
+<style>.cl-97da7b3a{}.cl-97d31016{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-97d3102a{font-family:'DejaVu Sans';font-size:6.6pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;position: relative;bottom:3.3pt;}.cl-97d607bc{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-97d607c6{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-97d607d0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-97d627d8{width:0.75in;background-color:transparent;vertical-align: bottom;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97d627e2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97d627ec{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97d627ed{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="table cl-97da7b3a">
 <thead>
 <tr style="overflow-wrap:break-word;">
-<th rowspan="2" class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">Year</span></p></th>
-<th rowspan="2" class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">Bulls</span></p></th>
-<th colspan="5" class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">Cow moose</span></p></th>
-<th rowspan="2" class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">Total</span><span class="cl-1c177290">a</span></p></th>
+<th rowspan="2" class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">Year</span></p></th>
+<th rowspan="2" class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">Bulls</span></p></th>
+<th colspan="5" class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">Cow moose</span></p></th>
+<th rowspan="2" class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">Total</span><span class="cl-97d3102a">a</span></p></th>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">Yearlings</span></p></th>
-<th class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">No calf</span></p></th>
-<th class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">One calf</span></p></th>
-<th class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">Twins</span></p></th>
-<th class="cl-1c1a7d8c"><p class="cl-1c1a5eba"><span class="cl-1c177272">Triplets</span></p></th>
+<th class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">Yearlings</span></p></th>
+<th class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">No calf</span></p></th>
+<th class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">One calf</span></p></th>
+<th class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">Twins</span></p></th>
+<th class="cl-97d627d8"><p class="cl-97d607bc"><span class="cl-97d31016">Triplets</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">2021</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">58</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">18</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">66</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">25</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">6</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">0</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">173</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">2021</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">58</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">18</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">66</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">25</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">6</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">0</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">173</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">2022</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">109</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">18</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">86</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">29</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">7</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">0</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">249</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">2022</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">109</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">18</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">86</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">29</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">7</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">0</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">249</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">2023</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">46</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">5</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">40</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">31</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">1</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">0</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">123</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">2023</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">46</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">5</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">40</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">31</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">1</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">0</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">123</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">2024</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">58</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">2</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">35</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">24</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">7</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">0</span></p></td>
-<td class="cl-1c1a7d96"><p class="cl-1c1a5ec4"><span class="cl-1c177272">126</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">2024</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">58</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">2</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">35</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">24</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">7</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">0</span></p></td>
+<td class="cl-97d627e2"><p class="cl-97d607c6"><span class="cl-97d31016">126</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">Total</span></p></td>
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">271</span></p></td>
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">43</span></p></td>
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">227</span></p></td>
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">109</span></p></td>
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">21</span></p></td>
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">0</span></p></td>
-<td class="cl-1c1a7d97"><p class="cl-1c1a5ec4"><span class="cl-1c177272">671</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">Total</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">271</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">43</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">227</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">109</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">21</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">0</span></p></td>
+<td class="cl-97d627ec"><p class="cl-97d607c6"><span class="cl-97d31016">671</span></p></td>
 </tr>
 </tbody>
-<tfoot><tr style="overflow-wrap:break-word;"><td colspan="8" class="cl-1c1a7da0"><p class="cl-1c1a5ece"><span class="cl-1c177272"></span><span class="cl-1c177290">a</span><span class="cl-1c177272">Total adults and yearlings; does not include calves</span><span class="cl-1c177272">; </span></p></td></tr></tfoot>
+<tfoot><tr style="overflow-wrap:break-word;"><td colspan="8" class="cl-97d627ed"><p class="cl-97d607d0"><span class="cl-97d31016"></span><span class="cl-97d3102a">a</span><span class="cl-97d31016">Total adults and yearlings; does not include calves</span><span class="cl-97d31016">; </span></p></td></tr></tfoot>
 </table>
 </div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tbls</span><span class="op">$</span><span class="va">tbl2</span></span></code></pre></div>
 <div class="tabwid">
-<style>.cl-1c338a20{}.cl-1c2c2064{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1c2c2078{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1c30149e{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1c302f88{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302f89{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302f92{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302f93{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302f94{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302f9c{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302f9d{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302f9e{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fa6{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fa7{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fa8{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fb0{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fb1{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fb2{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fb3{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fba{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fbb{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fbc{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fbd{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1c302fc4{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="table cl-1c338a20">
+<style>.cl-97f10e5e{}.cl-97e8f03e{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-97e8f052{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-97ed749c{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-97ed8f9a{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fa4{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fa5{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fb8{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fb9{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fba{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fc2{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fc3{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fc4{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fc5{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fcc{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fcd{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fce{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fcf{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fd6{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fd7{width:1.703in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fd8{width:0.577in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fe0{width:1.335in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fe1{width:1.209in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-97ed8fea{width:1.27in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="table cl-97f10e5e">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-1c302f88"><p class="cl-1c30149e"><span class="cl-1c2c2064">Year</span></p></th>
-<th class="cl-1c302f89"><p class="cl-1c30149e"><span class="cl-1c2c2078">n</span></p></th>
-<th class="cl-1c302f92"><p class="cl-1c30149e"><span class="cl-1c2c2064">Twinning rate</span></p></th>
-<th class="cl-1c302f93"><p class="cl-1c30149e"><span class="cl-1c2c2064">SE</span></p></th>
-<th class="cl-1c302f94"><p class="cl-1c30149e"><span class="cl-1c2c2064">90% CI</span></p></th>
+<th class="cl-97ed8f9a"><p class="cl-97ed749c"><span class="cl-97e8f03e">Year</span></p></th>
+<th class="cl-97ed8fa4"><p class="cl-97ed749c"><span class="cl-97e8f052">n</span></p></th>
+<th class="cl-97ed8fa5"><p class="cl-97ed749c"><span class="cl-97e8f03e">Twinning rate</span></p></th>
+<th class="cl-97ed8fb8"><p class="cl-97ed749c"><span class="cl-97e8f03e">SE</span></p></th>
+<th class="cl-97ed8fb9"><p class="cl-97ed749c"><span class="cl-97e8f03e">90% CI</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c302f9c"><p class="cl-1c30149e"><span class="cl-1c2c2064">2021</span></p></td>
-<td class="cl-1c302f9d"><p class="cl-1c30149e"><span class="cl-1c2c2064">31</span></p></td>
-<td class="cl-1c302f9e"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.19</span></p></td>
-<td class="cl-1c302fa6"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.072</span></p></td>
-<td class="cl-1c302fa7"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.077--0.31</span></p></td>
+<td class="cl-97ed8fba"><p class="cl-97ed749c"><span class="cl-97e8f03e">2021</span></p></td>
+<td class="cl-97ed8fc2"><p class="cl-97ed749c"><span class="cl-97e8f03e">31</span></p></td>
+<td class="cl-97ed8fc3"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.19</span></p></td>
+<td class="cl-97ed8fc4"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.072</span></p></td>
+<td class="cl-97ed8fc5"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.077--0.31</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c302f9c"><p class="cl-1c30149e"><span class="cl-1c2c2064">2022</span></p></td>
-<td class="cl-1c302f9d"><p class="cl-1c30149e"><span class="cl-1c2c2064">36</span></p></td>
-<td class="cl-1c302f9e"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.19</span></p></td>
-<td class="cl-1c302fa6"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.067</span></p></td>
-<td class="cl-1c302fa7"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.086--0.303</span></p></td>
+<td class="cl-97ed8fba"><p class="cl-97ed749c"><span class="cl-97e8f03e">2022</span></p></td>
+<td class="cl-97ed8fc2"><p class="cl-97ed749c"><span class="cl-97e8f03e">36</span></p></td>
+<td class="cl-97ed8fc3"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.19</span></p></td>
+<td class="cl-97ed8fc4"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.067</span></p></td>
+<td class="cl-97ed8fc5"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.086--0.303</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c302f9c"><p class="cl-1c30149e"><span class="cl-1c2c2064">2023</span></p></td>
-<td class="cl-1c302f9d"><p class="cl-1c30149e"><span class="cl-1c2c2064">32</span></p></td>
-<td class="cl-1c302f9e"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.03</span></p></td>
-<td class="cl-1c302fa6"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.031</span></p></td>
-<td class="cl-1c302fa7"><p class="cl-1c30149e"><span class="cl-1c2c2064">0--0.082</span></p></td>
+<td class="cl-97ed8fba"><p class="cl-97ed749c"><span class="cl-97e8f03e">2023</span></p></td>
+<td class="cl-97ed8fc2"><p class="cl-97ed749c"><span class="cl-97e8f03e">32</span></p></td>
+<td class="cl-97ed8fc3"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.03</span></p></td>
+<td class="cl-97ed8fc4"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.031</span></p></td>
+<td class="cl-97ed8fc5"><p class="cl-97ed749c"><span class="cl-97e8f03e">0--0.082</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c302f9c"><p class="cl-1c30149e"><span class="cl-1c2c2064">2024</span></p></td>
-<td class="cl-1c302f9d"><p class="cl-1c30149e"><span class="cl-1c2c2064">31</span></p></td>
-<td class="cl-1c302f9e"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.23</span></p></td>
-<td class="cl-1c302fa6"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.076</span></p></td>
-<td class="cl-1c302fa7"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.102--0.349</span></p></td>
+<td class="cl-97ed8fba"><p class="cl-97ed749c"><span class="cl-97e8f03e">2024</span></p></td>
+<td class="cl-97ed8fc2"><p class="cl-97ed749c"><span class="cl-97e8f03e">31</span></p></td>
+<td class="cl-97ed8fc3"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.23</span></p></td>
+<td class="cl-97ed8fc4"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.076</span></p></td>
+<td class="cl-97ed8fc5"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.102--0.349</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c302fa8"><p class="cl-1c30149e"><span class="cl-1c2c2064">Overall multiyear</span></p></td>
-<td class="cl-1c302fb0"><p class="cl-1c30149e"><span class="cl-1c2c2064">130</span></p></td>
-<td class="cl-1c302fb1"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.16</span></p></td>
-<td class="cl-1c302fb2"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.032</span></p></td>
-<td class="cl-1c302fb3"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.108--0.215</span></p></td>
+<td class="cl-97ed8fcc"><p class="cl-97ed749c"><span class="cl-97e8f03e">Overall multiyear</span></p></td>
+<td class="cl-97ed8fcd"><p class="cl-97ed749c"><span class="cl-97e8f03e">130</span></p></td>
+<td class="cl-97ed8fce"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.16</span></p></td>
+<td class="cl-97ed8fcf"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.032</span></p></td>
+<td class="cl-97ed8fd6"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.108--0.215</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c302fa8"><p class="cl-1c30149e"><span class="cl-1c2c2064">Eastern multiyear</span></p></td>
-<td class="cl-1c302fb0"><p class="cl-1c30149e"><span class="cl-1c2c2064">32</span></p></td>
-<td class="cl-1c302fb1"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.31</span></p></td>
-<td class="cl-1c302fb2"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.083</span></p></td>
-<td class="cl-1c302fb3"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.178--0.447</span></p></td>
+<td class="cl-97ed8fcc"><p class="cl-97ed749c"><span class="cl-97e8f03e">Eastern multiyear</span></p></td>
+<td class="cl-97ed8fcd"><p class="cl-97ed749c"><span class="cl-97e8f03e">32</span></p></td>
+<td class="cl-97ed8fce"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.31</span></p></td>
+<td class="cl-97ed8fcf"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.083</span></p></td>
+<td class="cl-97ed8fd6"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.178--0.447</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-1c302fba"><p class="cl-1c30149e"><span class="cl-1c2c2064">Western multiyear</span></p></td>
-<td class="cl-1c302fbb"><p class="cl-1c30149e"><span class="cl-1c2c2064">98</span></p></td>
-<td class="cl-1c302fbc"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.11</span></p></td>
-<td class="cl-1c302fbd"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.032</span></p></td>
-<td class="cl-1c302fc4"><p class="cl-1c30149e"><span class="cl-1c2c2064">0.06--0.165</span></p></td>
+<td class="cl-97ed8fd7"><p class="cl-97ed749c"><span class="cl-97e8f03e">Western multiyear</span></p></td>
+<td class="cl-97ed8fd8"><p class="cl-97ed749c"><span class="cl-97e8f03e">98</span></p></td>
+<td class="cl-97ed8fe0"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.11</span></p></td>
+<td class="cl-97ed8fe1"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.032</span></p></td>
+<td class="cl-97ed8fea"><p class="cl-97ed749c"><span class="cl-97e8f03e">0.06--0.165</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -347,11 +350,13 @@ for a report:</p>
 </h3>
 <p>This is a function developed to generate a Quarto report that
 summarizes annual moose twinning results. It relies on many of the above
-functions for importing, formatting, analyzing, and generating tables
-and figures. After import and formatting your data (<code>dat</code>)
-following the steps above, simply run:</p>
+functions for importing a CSV, formatting and analyzing the data, and
+generating tables and figures of the results. To generate a report, you
+need to provide a relative path to a CSV file containing moose twinning
+data following the required standard (see <code><a href="../reference/moose_twinning.html">?moose_twinning</a></code>
+for an example:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/create_report.html">create_report</a></span><span class="op">(</span>dat_in <span class="op">=</span> <span class="va">dat</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/create_report.html">create_report</a></span><span class="op">(</span>dat_in <span class="op">=</span> <span class="st">"a_path/to/my_twinning_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <p>In addition to saving a MS Word doc report to your working directory,
 this function also creates a new directory (default name is
 <code>quarto</code>) in your working directory that contains the .qmd

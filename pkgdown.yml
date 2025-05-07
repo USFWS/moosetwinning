@@ -3,7 +3,7 @@ pkgdown: 2.1.2
 pkgdown_sha: ~
 articles:
   getting_started: getting_started.html
-last_built: 2025-05-01T19:17Z
+last_built: 2025-05-07T00:27Z
 urls:
-  reference: https://miniature-guacamole-5jkvloy.pages.github.io/reference
-  article: https://miniature-guacamole-5jkvloy.pages.github.io/articles
+  reference: https://usfws.github.io/twinning/reference
+  article: https://usfws.github.io/twinning/articles

@@ -6,7 +6,7 @@ data-fig-alt="Lifecycle is experimental"><img
 src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"
 alt="Lifecycle: experimental" /></a> <!-- badges: end -->
 
-# twinning <a href="https://github.com/USFWS/moosetwinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="moosetwinning github repository"/></a>
+# moosetwinning <a href="https://github.com/USFWS/moosetwinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="moosetwinning github repository"/></a>
 
 ## Overview
 

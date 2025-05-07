@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# twinning <a href="https://github.com/USFWS/moosetwinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="moosetwinning github repository"/></a>
+# moosetwinning <a href="https://github.com/USFWS/moosetwinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="moosetwinning github repository"/></a>
 
 ## Overview
 

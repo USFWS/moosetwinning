@@ -1,9 +1,10 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-<!-- badges: end -->
+<a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"
+data-fig-alt="Lifecycle is experimental"><img
+src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"
+alt="Lifecycle: experimental" /></a> <!-- badges: end -->
 
 # twinning <a href="https://github.com/USFWS/twinning"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;" alt="twinning github repository"/></a>
 
@@ -32,19 +33,38 @@ To use `twinning` and generate reports, you’ll need:
 To install `twinning`:
 
 ``` r
-if (!require("devtools")) install.packages("devtools")  
-devtools::install_github("USFWS/twinning", ref = "main", build_vignettes = TRUE)  
-
+if (!require("pak")) install.packages("pak")  
+pak::pak("USFWS/twinning")  
 library(twinning)
 ```
 
 ## Usage
 
-To generate a moose twinning report:
+Refer to the [Getting
+Started](https://usfws.github.io/twinning/articles/getting_started.html)
+article for details on how to use the `twinning` package.
+
+To generate an example moose twinning report using data supplied with
+the package:
 
 ``` r
 library(twinning)
-create_report(dat)
+create_report()
+```
+
+To create a report using your data, provide a relative file path to a
+CSV containing moose twinning data. For example:
+
+``` r
+create_report("./data/dat.csv")
+```
+
+Data in the CSV should be formatted to the required standard. For
+example:
+
+``` r
+data("moose_twinning")
+?twinning::moose_twinning
 ```
 
 For more information, check out the package [GitHub
@@ -64,6 +84,7 @@ or request a feature or enhancement.
 
 ------------------------------------------------------------------------
 
-![](https://i.creativecommons.org/l/zero/1.0/88x31.png) This work is
-licensed under a [Creative Commons Zero Universal v1.0
+<img src="https://i.creativecommons.org/l/zero/1.0/88x31.png"
+data-fig-alt="Creative Commons Zero Universal v1.0 License" /> This work
+is licensed under a [Creative Commons Zero Universal v1.0
 License](https://creativecommons.org/publicdomain/zero/1.0/).

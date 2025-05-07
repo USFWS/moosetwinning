@@ -21,7 +21,7 @@ Imports:
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
-URL: usfws.github.io/twinning/ 
+URL: https://usfws.github.io/twinning/
 VignetteBuilder: quarto, knitr
 Suggests: 
     rmarkdown

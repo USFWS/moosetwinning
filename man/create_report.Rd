@@ -2,21 +2,21 @@
 % Please edit documentation in R/create_report.R
 \name{create_report}
 \alias{create_report}
-\title{Write a moose twinning report}
+\title{Render a moose twinning report using Quarto}
 \usage{
 create_report(
-  dirname = "quarto",
-  dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv")
+  dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"),
+  dirname = "quarto"
 )
 }
 \value{
 a Word doc
 }
 \description{
-Write a moose twinning report
+Render a moose twinning report using Quarto
 }
 \examples{
 \dontrun{
-write_report()
+create_report(dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"))
 }
 }

@@ -41,7 +41,7 @@ get_report_template <- function(dirname = "quarto") {
 }
 
 
-#' Write a moose twinning report
+#' Render a moose twinning report using Quarto
 #'
 #' @return a Word doc
 #'
@@ -50,10 +50,11 @@ get_report_template <- function(dirname = "quarto") {
 #'
 #' @examples
 #' \dontrun{
-#' write_report()
+#' create_report(dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"))
 #' }
-create_report <- function(dirname = "quarto",
-                          dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv")) {
+create_report <- function(dat_in = paste0(system.file("extdata", package = "twinning"), "/dat.csv"),
+                          dirname = "quarto"
+                          ) {
 
   # Copy the Quarto report template files into the working directory
   twinning::get_report_template(dirname)

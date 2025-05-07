@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE, message=FALSE}
+```{r setup, include=FALSE, message=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -43,10 +43,8 @@ To use `twinning` and generate reports, you’ll need:
 To install `twinning`:  
 
 ``` {r, eval=FALSE}
-if (!require("devtools")) install.packages("devtools")  
-devtools::install_github("USFWS/twinning", 
-                         ref = "main", 
-                         build_vignettes = TRUE)  
+if (!require("pak")) install.packages("pak")  
+pak::pak("USFWS/twinning")  
 library(twinning)
 ```
 
@@ -57,7 +55,7 @@ To find a help file for any function in `twinning`, type `?` and the name of the
 
 ## How do I use it?  
 
-There are two general approaches to using `twinning` and selecting which approach to take depends on your needs. The first approach ("*step-wise*"), consists of using individual functions to work through the steps of importing and formatting input data, performing an analysis, and creating tables and plots. This approach would be favored if you're interested in examining the details of the analysis, would like to perform additional analyses not included in the package, or if you just want tables and figures. The second approach ("*all in one*") performs all the above steps and compiles the results into a PDF report with `run_report()` function. This approach would be favored for annual reporting of results. Below are more details on the two approaches.
+There are two general approaches to using `twinning` and selecting which approach to take depends on your needs. The first approach ("*step-wise*"), consists of using individual functions to work through the steps of importing and formatting input data, performing an analysis, and creating tables and plots. This approach would be favored if you're interested in examining the details of the analysis, would like to perform additional analyses not included in the package, or if you just want tables and figures. The second approach ("*all in one*") performs all the above steps and compiles the results into a MS Word document with `run_report()` function. This approach would be favored for annual reporting of results. Below are more details on the two approaches.
 
 
 ### Option 1: Creating figures and tables
@@ -79,7 +77,7 @@ head(dat)
 
 To estimate twinning rates using data have been imported and formatted using the `import_format()` function:
 
-``` {r, message=FALSE}
+``` {r import-format, message=FALSE}
 dat_sum <- twinning_rates(dat)
 dat_sum
 ```
@@ -89,41 +87,41 @@ dat_sum
 
 You can create formatted `flextable` tables and figures for a report:
 
-``` {r, message=FALSE}
+``` {r create-tbls, message=FALSE}
 tbls <- create_tbls(dat)
 ```
 
-``` {r, message=FALSE}
+``` {r tbl1, message=FALSE}
 tbls$tbl1
 ```
 
-``` {r, message=FALSE}
+``` {r tbl2, message=FALSE}
 tbls$tbl2
 ```
 
 You can also create summary plots:
 
-``` {r, message=FALSE}
+``` {r create-figs, message=FALSE}
 figs <- create_figs(dat)
 ```
 
-``` {r, message=FALSE}
+``` {r fig2, message=FALSE}
 figs$fig2
 ```
 
-``` {r, message=FALSE}
+``` {r fig3, message=FALSE}
 figs$fig3
 ```
 
 
 ### Option 2: Create a report
 
-This is a function developed to generate a Quarto report that summarizes annual moose twinning results. It relies on many of the above functions for importing, formatting, analyzing, and generating tables and figures. To run the function, simply run:
-```{r, eval = FALSE}
+This is a function developed to generate a Quarto report that summarizes annual moose twinning results. It relies on many of the above functions for importing, formatting, analyzing, and generating tables and figures. After import and formatting your data (`dat`) following the steps above, simply run:
+
+```{r create-report, eval = FALSE}
 create_report(dat_in = dat)
 ```
 
 In addition to saving a MS Word doc report to your working directory, this function also creates a new directory (default name is `quarto`) in your working directory that contains the .qmd file used to render the report and other associated files, including bib files for the bibliography, a csl file for formatting the bibliography to the Journal of Wildlife Management standard, an images folder, and a MS Word doc file containing custom text styles that match the National Wildlife Refuge System graphic standard. All these files can be edited as needed, and the .qmd can be re-rendered directly to customize your report, as needed.
 
-![An example of the cover page of a report created by `create_report()`](./images/report.png)
-
+![An example of the cover page of a report created by `create_report()`](./images/report.png){fig-alt="The cover page of an example report created from the create_report function."}

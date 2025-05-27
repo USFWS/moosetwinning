@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 ```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
-library(twinning)
+library(moosetwinning)
 library(dplyr)
 library(flextable)
 library(lubridate)

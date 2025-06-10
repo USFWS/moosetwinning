@@ -57,7 +57,7 @@ create_report <- function(dat_in = paste0(system.file("extdata", package = "moos
                           ) {
 
   # Copy the Quarto report template files into the working directory
-  twinning::get_report_template(dirname)
+  moosetwinning::get_report_template(dirname)
 
   # Render a report
   quarto::quarto_render(

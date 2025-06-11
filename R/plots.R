@@ -18,8 +18,8 @@ create_figs <- function(dat) {
 
   # Figure 2
   fig2 <- twinning_rates(dat) |>
-    filter(!yr %in% c("overall", "eastern", "western")) |>  # remove multiyear data
-    ggplot(aes(yr, t)) +
+    dplyr::filter(!yr %in% c("overall", "eastern", "western")) |>  # remove multiyear data
+    ggplot2::ggplot(aes(yr, t)) +
     geom_point(size = 2.5) +
     geom_text(aes(y = ci_u, label = n), nudge_y = 0.03) +
     geom_errorbar(aes(ymin = ci_l, ymax = ci_u),
@@ -29,9 +29,9 @@ create_figs <- function(dat) {
 
   # Figure 3
   fig3 <- twinning_rates(dat) |>
-    filter(yr %in% c("overall", "eastern", "western")) |>  # keep only multiyear data
-    mutate(yr = stringr::str_to_title(yr)) |>
-    ggplot(aes(yr, t)) +
+    dplyr::filter(yr %in% c("overall", "eastern", "western")) |>  # keep only multiyear data
+    dplyr::mutate(yr = stringr::str_to_title(yr)) |>
+    ggplot2::ggplot(aes(yr, t)) +
     geom_point(size = 2.5) +
     geom_text(aes(y = ci_u, label = n), nudge_y = 0.03) +
     geom_errorbar(aes(ymin = ci_l, ymax = ci_u),

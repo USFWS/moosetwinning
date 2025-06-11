@@ -10,6 +10,8 @@ import_format(dat_in, boms = FALSE, replace_nas = FALSE)
 \item{dat_in}{a file directory path to a CSV file containing moose twinning observation data}
 
 \item{boms}{TRUE or FALSE, indicating whether to add required Biological Observation Minimum Specifications fields to the dataframe}
+
+\item{replace_nas}{TRUE or FALSE, indicating whether to replace NAs with empty values}
 }
 \value{
 a data frame

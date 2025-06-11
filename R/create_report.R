@@ -43,6 +43,9 @@ get_report_template <- function(dirname = "quarto") {
 
 #' Render a moose twinning report using Quarto
 #'
+#' @param dat_in a directory path to a CSV file containing moose twinning data (see https://iris.fws.gov/APPS/ServCat/Reference/Profile/179584)
+#' @param dirname the name of a project directory in which to save the quarto report
+#'
 #' @return a Word doc
 #'
 #' @import quarto
@@ -54,7 +57,7 @@ get_report_template <- function(dirname = "quarto") {
 #' }
 create_report <- function(dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"),
                           dirname = "quarto"
-                          ) {
+) {
 
   # Copy the Quarto report template files into the working directory
   moosetwinning::get_report_template(dirname)

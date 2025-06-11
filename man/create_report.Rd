@@ -9,6 +9,11 @@ create_report(
   dirname = "quarto"
 )
 }
+\arguments{
+\item{dat_in}{a directory path to a CSV file containing moose twinning data (see https://iris.fws.gov/APPS/ServCat/Reference/Profile/179584)}
+
+\item{dirname}{the name of a project directory in which to save the quarto report}
+}
 \value{
 a Word doc
 }

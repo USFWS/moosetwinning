@@ -9,8 +9,6 @@
 #'
 #' @return A folder containing files required to render a Quarto MS Word doc; including a MS Word template for a refuge report, a skeleton qmd file, bibligraphy bib files, and images needed for the refuge report template.
 #'
-#' @import cli
-#' @import usethis ui_yeah
 #' @export
 #'
 #' @examples
@@ -44,7 +42,7 @@ get_report_template <- function(dir_name = getwd(),
 #'
 #' @import quarto
 #' @import cli
-#' @import usethis
+#' @importFrom usethis ui_nope
 #' @export
 #'
 #' @examples

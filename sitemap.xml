@@ -1,7 +1,7 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://usfws.github.io/moosetwinning/404.html</loc></url>
 <url><loc>https://usfws.github.io/moosetwinning/DISCLAIMER.html</loc></url>
-<url><loc>https://usfws.github.io/moosetwinning/LICENSE.html</loc></url>
+<url><loc>https://usfws.github.io/moosetwinning/LICENSE-text.html</loc></url>
 <url><loc>https://usfws.github.io/moosetwinning/articles/index.html</loc></url>
 <url><loc>https://usfws.github.io/moosetwinning/articles/moosetwinning.html</loc></url>
 <url><loc>https://usfws.github.io/moosetwinning/authors.html</loc></url>
@@ -14,8 +14,7 @@
 <url><loc>https://usfws.github.io/moosetwinning/reference/import_format.html</loc></url>
 <url><loc>https://usfws.github.io/moosetwinning/reference/index.html</loc></url>
 <url><loc>https://usfws.github.io/moosetwinning/reference/moose_twinning.html</loc></url>
-<url><loc>https://usfws.github.io/moosetwinning/reference/moosetwinning-package.html</loc></url>
-<url><loc>https://usfws.github.io/moosetwinning/reference/pipe.html</loc></url>
+<url><loc>https://usfws.github.io/moosetwinning/reference/moosetwinning.html</loc></url>
 <url><loc>https://usfws.github.io/moosetwinning/reference/twinning_rates.html</loc></url>
 </urlset>
 

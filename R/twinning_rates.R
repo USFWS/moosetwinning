@@ -8,6 +8,7 @@
 #' @return a data frame containing annual and multiyear twinning rates
 #'
 #' @import dplyr
+#' @import lubridate
 #' @export
 #'
 #' @examples
@@ -19,7 +20,7 @@ twinning_rates <- function(dat) {
   # Calculate annual moose twinning rates
   ## Annual
   annual <- dat |>
-    dplyr::mutate(yr = year(srvy_day)) |>
+    dplyr::mutate(yr = lubridate::year(srvy_day)) |>
     dplyr::group_by(yr) |>
     dplyr::summarize(mc = sum(cow1clf, na.rm = T),
                      mt = sum(cow2clf, na.rm = T)) |>

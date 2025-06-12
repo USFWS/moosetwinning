@@ -8,6 +8,7 @@
 #' @import flextable
 #' @import dplyr
 #' @importFrom magrittr %>%
+#' @import lubridate
 #' @export
 #'
 #' @examples
@@ -18,7 +19,7 @@ create_tbls <- function(dat) {
 
   ## Table 1
   t1 <- dat |>
-    dplyr::mutate(Year = as.character(year(srvy_day))) |>
+    dplyr::mutate(Year = as.character(lubridate::year(srvy_day))) |>
     dplyr::select(-c(srvy_day, leafout, group, latitude, longitude, pilot, observer, nabevw)) |>
     dplyr::relocate(Year, .before = 1) |>
     dplyr::rename(Bulls = bull,

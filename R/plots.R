@@ -8,6 +8,7 @@
 #' @import stringr
 #' @import ggplot2
 #' @import dplyr
+#' @import lubridate
 #' @export
 #'
 #' @examples

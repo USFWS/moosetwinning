@@ -46,13 +46,30 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_report</span><span class="op">(</span></span>
 <span>  dat_in <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package <span class="op">=</span> <span class="st">"moosetwinning"</span><span class="op">)</span>, <span class="st">"/dat.csv"</span><span class="op">)</span>,</span>
-<span>  dirname <span class="op">=</span> <span class="st">"quarto"</span></span>
+<span>  dir_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  folder_name <span class="op">=</span> <span class="st">"quarto"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
+    <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
+
+
+<dl><dt id="arg-dat-in">dat_in<a class="anchor" aria-label="anchor" href="#arg-dat-in"></a></dt>
+<dd><p>a directory path to a CSV file containing moose twinning data (see https://iris.fws.gov/APPS/ServCat/Reference/Profile/179584)</p></dd>
+
+
+<dt id="arg-dir-name">dir_name<a class="anchor" aria-label="anchor" href="#arg-dir-name"></a></dt>
+<dd><p>a directory path to save the output</p></dd>
+
+
+<dt id="arg-folder-name">folder_name<a class="anchor" aria-label="anchor" href="#arg-folder-name"></a></dt>
+<dd><p>the name of the folder in which to save the template files</p></dd>
+
+</dl></div>
+    <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>a Word doc</p>
+    <p>a skeleton moose twinning report rendered from Quarto; including plots, tables and summary statistics. You will need to update this file with any discussion or interpretation of the results.</p>
     </div>
 
     <div class="section level2">

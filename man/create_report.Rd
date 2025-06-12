@@ -6,16 +6,19 @@
 \usage{
 create_report(
   dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"),
-  dirname = "quarto"
+  dir_name = getwd(),
+  folder_name = "quarto"
 )
 }
 \arguments{
 \item{dat_in}{a directory path to a CSV file containing moose twinning data (see https://iris.fws.gov/APPS/ServCat/Reference/Profile/179584)}
 
-\item{dirname}{the name of a project directory in which to save the quarto report}
+\item{dir_name}{a directory path to save the output}
+
+\item{folder_name}{the name of the folder in which to save the template files}
 }
 \value{
-a Word doc
+a skeleton moose twinning report rendered from Quarto; including plots, tables and summary statistics. You will need to update this file with any discussion or interpretation of the results.
 }
 \description{
 Render a moose twinning report using Quarto

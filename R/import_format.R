@@ -11,7 +11,6 @@
 #'
 #' @import dplyr
 #' @import lubridate
-#'
 #' @export
 #'
 #' @examples
@@ -28,10 +27,10 @@ import_format <- function(dat_in,
   dat <- dat |>
     dplyr::mutate(srvy_day = as.Date(srvy_day, format = "%m/%d/%Y"),
                   group = as.factor(group)) |>
-    dplyr::mutate(latitude = case_when(latitude == "." ~ NA,
-                                       .default = latitude),
-                  longitude = case_when(longitude == "." ~ NA,
-                                        .default = longitude)) |>
+    dplyr::mutate(latitude = dplyr::case_when(latitude == "." ~ NA,
+                                              .default = latitude),
+                  longitude = dplyr::case_when(longitude == "." ~ NA,
+                                               .default = longitude)) |>
     dplyr::mutate(latitude = as.numeric(latitude),
                   longitude = as.numeric(longitude)) |>
     dplyr::mutate(pilot = as.factor(pilot),
@@ -62,7 +61,7 @@ import_format <- function(dat_in,
                     collectionID = "https://iris.fws.gov/APPS/ServCat/Reference/Profile/145850",
                     accessRights = "public",
                     informationWithheld = "none",
-                    year = year(srvy_day),
+                    year = lubridate::year(srvy_day),
                     samplingProtocol = "Site-Specific Protocol for Monitoring Moose Twinning, Tetlin National Wildlife Refuge",
                     basisOfRecord = "Visual Report (Seen)",
                     eventID = paste0("TET-MOOSETWINNING-", gsub("-", "", format_ISO8601(srvy_day))),
@@ -81,9 +80,21 @@ import_format <- function(dat_in,
                     decimalLongitude = longitude,
                     geodeticDatum = "WGS84",
                     georeferenceSources = "GPS receiver") |>
-      dplyr::select(-group, -observer, -srvy_day, -latitude, -longitude) |>  # Remove duplicative fields
-      dplyr::relocate(leafout, pilot, nabevw, bull, yrlcow, cow0clf,
-                      cow1clf, cow2clf, cow3clf, .after = last_col())
+      dplyr::select(-group,
+                    -observer,
+                    -srvy_day,
+                    -latitude,
+                    -longitude) |>  # Remove duplicative fields
+      dplyr::relocate(leafout,
+                      pilot,
+                      nabevw,
+                      bull,
+                      yrlcow,
+                      cow0clf,
+                      cow1clf,
+                      cow2clf,
+                      cow3clf,
+                      .after = last_col())
   }
 
   if (replace_nas) {

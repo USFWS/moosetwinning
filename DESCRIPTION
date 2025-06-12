@@ -5,7 +5,6 @@ Version: 0.1.0
 Author: McCrea Cobb
 Maintainer: McCrea Cobb <mccrea_cobb@fws.gov>
 Description: Takes moose twinning survey observations and generates a MS report formatted in the style of the AK refuge report series.
-License: CCO
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -17,7 +16,9 @@ Imports:
   knitr,
   quarto,
   stringr,
-  lubridate
+  lubridate,
+  usethis,
+  cli
 RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
@@ -25,3 +26,4 @@ URL: https://usfws.github.io/moosetwinning/
 VignetteBuilder: quarto, knitr
 Suggests: 
     rmarkdown
+License: CC0

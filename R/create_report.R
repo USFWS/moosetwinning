@@ -4,67 +4,75 @@
 #' contain the ready-to-use Quarto file and all associated files. The Word and PDF templates are
 #' based on the standard template of the Alaska Refuge Report Series.
 #'
-#' @param dirname character; the name of the directory to create.
+#' @param dir_name a directory path to save the output
+#' @param folder_name the name of the folder in which to save the template files
 #'
+#' @return A folder containing files required to render a Quarto MS Word doc; including a MS Word template for a refuge report, a skeleton qmd file, bibligraphy bib files, and images needed for the refuge report template.
+#'
+#' @import cli
+#' @import usethis ui_yeah
 #' @export
 #'
 #' @examples
 #' \dontrun{
 #'  # Create template for Word document
-#'  get_report_template(dirname = "twinning_report")
+#'  get_report_template(dir_name = "twinning_report")
 #' }
-get_report_template <- function(dirname = "quarto") {
-
-  tmp_dir <- paste(dirname, "_tmp", sep = "")
-  if (file.exists(dirname) || file.exists(tmp_dir)) {
-    stop(paste("Cannot run get_report_template() from a directory already containing",
-               dirname, "or", tmp_dir))
-  }
-  dir.create(tmp_dir)
-
-  # Get all file names in the template folder
-  list_of_files <- list.files(
-    system.file(file.path("quarto"),
-                package = "moosetwinning"))
+get_report_template <- function(dir_name = getwd(),
+                                folder_name = "quarto") {
 
   # Copy all files and subfolders in the skeleton folder into a new folder
-  for (i in seq_along(list_of_files)) {
-    file.copy(system.file(file.path("quarto", list_of_files[i]), package = "moosetwinning"),
-              file.path(tmp_dir),
-              recursive = TRUE)
-  }
-
-  file.rename(tmp_dir, dirname)
-  file.rename(file.path(dirname, "skeleton.qmd"), file.path(dirname, paste0("report.qmd")))
-  unlink(tmp_dir, recursive = TRUE)
-
+  file.copy(from = system.file(file.path("quarto"), package = "moosetwinning"),
+            to = dir_name,
+            overwrite = TRUE,
+            recursive = TRUE)
+  # Rename the directory
+  file.rename(file.path(dir_name, "quarto"), file.path(dir_name, folder_name))
+  # Rename the skeleton.qmd
+  file.rename(from = file.path(dir_name, folder_name, "skeleton.qmd"),
+              to = file.path(dir_name, folder_name, paste0("report.qmd")))
 }
 
 
 #' Render a moose twinning report using Quarto
 #'
 #' @param dat_in a directory path to a CSV file containing moose twinning data (see https://iris.fws.gov/APPS/ServCat/Reference/Profile/179584)
-#' @param dirname the name of a project directory in which to save the quarto report
+#' @param dir_name a directory path to save the output
+#' @param folder_name the name of the folder in which to save the template files
 #'
-#' @return a Word doc
+#' @return a skeleton moose twinning report rendered from Quarto; including plots, tables and summary statistics. You will need to update this file with any discussion or interpretation of the results.
 #'
 #' @import quarto
+#' @import cli
+#' @import usethis
 #' @export
 #'
 #' @examples
 #' \dontrun{
 #' create_report(dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"))
 #' }
-create_report <- function(dat_in = paste0(system.file("extdata", package = "moosetwinning"), "/dat.csv"),
-                          dirname = "quarto"
-) {
+create_report <- function(dat_in = paste0(system.file("extdata",
+                                                      package = "moosetwinning"),
+                                          "/dat.csv"),
+                          dir_name = getwd(),
+                          folder_name = "quarto") {
 
   # Copy the Quarto report template files into the working directory
-  moosetwinning::get_report_template(dirname)
+  if (file.exists(file.path(dir_name, folder_name))) {
+    cli::cli_alert_warning(paste0("Your working directory already contains a folder called ",
+                                  folder_name, "."))
+    if (usethis::ui_nope("Do you want to overwrite it?",
+                         yes = "Yes, I want it gone!",
+                         no = "No, I want to keep it.")) {
+      return(cli::cli_alert("Quit"))
+    }
+  }
+
+  moosetwinning::get_report_template(dir_name, folder_name)
 
   # Render a report
   quarto::quarto_render(
-    input = paste0("./", dirname, "/", "report.qmd"),
+    input = file.path(dir_name, folder_name, "report.qmd"),
     output_format = "docx",
     output_file = "report.docx",
     execute_params = list(dat_in = dat_in))

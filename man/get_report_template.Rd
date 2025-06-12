@@ -4,10 +4,15 @@
 \alias{get_report_template}
 \title{Create a new directory with the moose twinning survey report template}
 \usage{
-get_report_template(dirname = "quarto")
+get_report_template(dir_name = getwd(), folder_name = "quarto")
 }
 \arguments{
-\item{dirname}{character; the name of the directory to create.}
+\item{dir_name}{a directory path to save the output}
+
+\item{folder_name}{the name of the folder in which to save the template files}
+}
+\value{
+A folder containing files required to render a Quarto MS Word doc; including a MS Word template for a refuge report, a skeleton qmd file, bibligraphy bib files, and images needed for the refuge report template.
 }
 \description{
 \code{create_quarto_doc} creates a new subdirectory inside the current directory, which will
@@ -17,6 +22,6 @@ based on the standard template of the Alaska Refuge Report Series.
 \examples{
 \dontrun{
  # Create template for Word document
- get_report_template(dirname = "twinning_report")
+ get_report_template(dir_name = "twinning_report")
 }
 }

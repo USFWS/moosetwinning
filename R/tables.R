@@ -7,7 +7,6 @@
 #'
 #' @import flextable
 #' @import dplyr
-#' @import lubridate
 #' @importFrom magrittr %>%
 #' @export
 #'

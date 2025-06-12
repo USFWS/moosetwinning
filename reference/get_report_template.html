@@ -11,7 +11,7 @@ based on the standard template of the Alaska Refuge Report Series."><meta proper
 
     <a class="navbar-brand me-2" href="../index.html">moosetwinning</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,23 +50,31 @@ based on the standard template of the Alaska Refuge Report Series.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_report_template</span><span class="op">(</span>dirname <span class="op">=</span> <span class="st">"quarto"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_report_template</span><span class="op">(</span>dir_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>, folder_name <span class="op">=</span> <span class="st">"quarto"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-dirname">dirname<a class="anchor" aria-label="anchor" href="#arg-dirname"></a></dt>
-<dd><p>character; the name of the directory to create.</p></dd>
+<dl><dt id="arg-dir-name">dir_name<a class="anchor" aria-label="anchor" href="#arg-dir-name"></a></dt>
+<dd><p>a directory path to save the output</p></dd>
+
+
+<dt id="arg-folder-name">folder_name<a class="anchor" aria-label="anchor" href="#arg-folder-name"></a></dt>
+<dd><p>the name of the folder in which to save the template files</p></dd>
 
 </dl></div>
+    <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <p>A folder containing files required to render a Quarto MS Word doc; including a MS Word template for a refuge report, a skeleton qmd file, bibligraphy bib files, and images needed for the refuge report template.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span> <span class="co"># Create template for Word document</span></span></span>
-<span class="r-in"><span> <span class="fu">get_report_template</span><span class="op">(</span>dirname <span class="op">=</span> <span class="st">"twinning_report"</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="fu">get_report_template</span><span class="op">(</span>dir_name <span class="op">=</span> <span class="st">"twinning_report"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

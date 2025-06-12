@@ -18,7 +18,7 @@ editor: source
 bibliography: [bib/bibliography.bib, bib/packages.bib]  # Path to bibliography files
 csl: bib/the-journal-of-wildlife-management.csl   # Path to reference style file
 params: 
-  dat_in: !expr "paste0(system.file('extdata', package = 'twinning'), '/dat.csv')"
+  dat_in: !expr "paste0(system.file('extdata', package = 'moosetwinning'), '/dat.csv')"
 ---
 
 ```{r}
@@ -61,19 +61,19 @@ knitr::write_bib(
 dat_in <- params$dat_in
 
 # Observation data
-dat <- twinning::import_format(dat_in)
+dat <- moosetwinning::import_format(dat_in)
 dat <- dat |>
   mutate(total = bull + yrlcow + cow0clf + cow1clf + cow2clf + cow3clf)
 
 # Data frames with twinning rates estimates
-dat_sum <- twinning::twinning_rates(dat)
+dat_sum <- moosetwinning::twinning_rates(dat)
 dat_sum_annual <- dat_sum |>
   filter(! yr %in% c("overall", "eastern", "western")) |>
   mutate(yr = as.numeric(yr))
 
 # Data frames for tables and figs
-tbls <- twinning::create_tbls(dat)
-figs <- twinning::create_figs(dat)
+tbls <- moosetwinning::create_tbls(dat)
+figs <- moosetwinning::create_figs(dat)
 ```
 
 

@@ -66,7 +66,7 @@ twinning_rates <- function(dat) {
     dplyr::select(yr, n, t, se, ci_l, ci_u)
 
   ## Join them  (rbind causes R to crash)
-  dat_sum <- bind_rows(annual, multiyear, multiyear_ew) |>
+  dat_sum <- dplyr::bind_rows(annual, multiyear, multiyear_ew) |>
     dplyr::ungroup() |>
     dplyr::mutate(ci_l = case_when(ci_l <= 0 ~ 0,  # Make lower CIs that are <0 -> 0
                                    .default = ci_l))

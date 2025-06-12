@@ -1,7 +1,7 @@
 Package: moosetwinning
 Type: Package
 Title: Creates a MS Word report of moose twinning
-Version: 0.1.0
+Version: 0.1.1
 Author: McCrea Cobb
 Maintainer: McCrea Cobb <mccrea_cobb@fws.gov>
 Description: Takes moose twinning survey observations and generates a MS report formatted in the style of the AK refuge report series.
